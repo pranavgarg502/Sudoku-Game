@@ -23,5 +23,5 @@ This project is a web-based **Sudoku Game**, designed to provide an interactive 
 2. Extract the files if downloaded as a ZIP.
 3. Open the `index.html` file in your web browser to start the game.
 
-## File Structure
+
 
