@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level Selection</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column; /* Stack buttons vertically */
+            justify-content: center; /* Center content vertically */
+            align-items: center;    /* Center content horizontally */
+            background-color: hsla(16, 88%, 61%, 0.927); /* Background color */
+            margin: 0;
+            height: 100vh; /* Full viewport height */
+        }
+
+        .button {
+            margin: 10px; /* Space between buttons */
+            cursor: pointer; /* Make divs clickable */
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .button img {
+            width: 400px; /* Button image size */
+            height: auto;
+            display: block;
+        }
+
+        .button:hover {
+            transform: scale(1.1); /* Enlarge slightly on hover */
+        }
+
+        /* Style for the exit button */
+        .exit-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #ff4d4d; /* Red background */
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .exit-button:hover {
+            background-color: #e60000; /* Darker red on hover */
+        }
+    </style>
+</head>
+<body>
+    <!-- Level Buttons -->
+    <div class="button" id="level1">
+        <img src="level1.png" alt="Level 1">
+    </div>
+    <div class="button" id="level2">
+        <img src="level2.png" alt="Level 2">
+    </div>
+    <div class="button" id="level3">
+        <img src="level3.png" alt="Level 3">
+    </div>
+
+    <!-- Exit Button -->
+    <div class="button">
+        <button class="exit-button" id="exitButton">Exit</button>
+    </div>
+
+    <script>
+        // Add click events to each level button
+        document.getElementById('level1').onclick = () => window.location.href = `page3.html?level=${1}`;
+        document.getElementById('level2').onclick = () => window.location.href = `page3.html?level=${2}`;
+        document.getElementById('level3').onclick = () => window.location.href = `page3.html?level=${3}`;
+        
+        // Exit button functionality
+        document.getElementById('exitButton').onclick = () => {
+            window.location.href = 'index.html'; // Change this URL to wherever you want to return
+        };
+    </script>
+</body>
+</html>

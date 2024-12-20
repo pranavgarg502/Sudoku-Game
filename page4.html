@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku Game</title>
+    <link rel='stylesheet' href='page4.css'>
+    <script src='page4.js'></script>
+</head>
+<body>
+    <div class="game_at_top">
+        <img src="game.png" id="heading-image" alt="Game Heading" style="margin-bottom: 20px;">
+    </div>
+    <div class="sudoku-container" id="sudokuGrid"></div>
+    <div>
+        <button id="submit_button" onclick="checkSolution(levelNumber) ">Submit</button>
+        <a href="index.html">
+            <button>Exit</button>
+        </a>
+    </div>
+    <div class="overlay" id="overlay1">
+        <img src="correct.png" alt="Overlay Image">
+        <div class="button-container">
+            <button onclick="next(gameNumber,levelNumber)">Next</button>
+            <button onclick="backToGames(levelNumber)">Back to Games</button>
+            <button onclick="exit()">Exit</button>
+        </div>
+    </div>
+    <div class="overlay" id="overlay2">
+        <div>
+            <img src="wrong.png" alt="Overlay Image">
+        </div>
+        <div class="button-container">
+            <button onclick="reset()">Reset</button>
+            <button onclick="solution(gameNumber)">Solution</button>
+            <button onclick="backToGames(levelNumber)">Back to Games</button>
+            <button onclick="exit()">Exit</button>
+        </div>
+    </div>
+</body>
+</html>
+<!DOCTYPE html>
+

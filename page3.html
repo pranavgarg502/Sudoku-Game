@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku Game Selector</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color:hsla(16, 88%, 61%, 0.927);
+
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .level-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+            padding: 20px;
+        }
+
+        .game-button {
+            padding: 15px;
+            font-size: 18px;
+            font: weight 30px;;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            background-color: hsl(61, 89%, 65%);
+            color: #000000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .game-button:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+
+        .back-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: hsl(13, 76%, 21%);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            background-color: #e64a19;
+        }
+        .level_at_top img{
+            width: 600px;
+            height:auto;
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+        function getQueryParams() {
+            const params = {};
+            const queryString = window.location.search;
+
+            if (queryString) {
+                 const pairs = queryString.slice(1).split("&");
+                pairs.forEach((pair) => {
+                    const [key, value] = pair.split("=");
+                    params[key] = decodeURIComponent(value);
+                });
+            }
+
+            return params;
+        }
+        
+        // Use the function to get the level parameter
+        const queryParams = getQueryParams();
+        const levelNumber = queryParams.level;
+
+        function selectGame(levelNumber , gameNumber) {
+            window.location.href = `page4.html?level=${levelNumber}&game=${gameNumber}`;
+        }
+
+        function goBack() {
+            window.location.href = 'page2.html';
+        }
+        function selectHeading(levelNumber) {
+            const headingImage = document.getElementById('heading-image');
+            if (levelNumber == 1) {
+                headingImage.src = "level1.png"; // Example image for level 1
+            } else if (levelNumber == 2) {
+                headingImage.src = "level2.png"; // Example image for level 2
+            } else if (levelNumber == 3) {
+                headingImage.src = "level3.png"; // Example image for level 3
+            } else {
+                headingImage.src = "logo.png"; // Default image if no valid level
+            }
+        }
+        window.onload = function() {
+            selectHeading(levelNumber);
+        }
+    </script>
+
+    <div class="level_at_top">
+        <img id="heading-image" alt="Level Heading" style="margin-bottom: 20px;">
+    </div>
+    <div class="level-grid">
+        <button class="game-button" onclick="selectGame(levelNumber , 1)">Game 1</button>
+        <button class="game-button" onclick="selectGame(levelNumber ,2)">Game 2</button>
+        <button class="game-button" onclick="selectGame(levelNumber ,3)">Game 3</button>
+        <button class="game-button" onclick="selectGame(levelNumber ,4)">Game 4</button>
+        <button class="game-button" onclick="selectGame(levelNumber ,5)">Game 5</button>
+        <button class="game-button" onclick="selectGame(levelNumber ,6)">Game 6</button>
+        <button class="game-button" onclick="selectGame(levelNumber ,7)">Game 7</button>
+        <button class="game-button" onclick="selectGame(levelNumber ,8)">Game 8</button>
+        <button class="game-button" onclick="selectGame(levelNumber ,9)">Game 9</button>
+        <button class="game-button" onclick="selectGame(levelNumber ,10)">Game 10</button>
+    </div>
+
+    <button class="back-button" onclick="goBack()">Back to Levels</button>
+
+</body>
+</html>
