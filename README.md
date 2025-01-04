@@ -25,5 +25,5 @@ This project is a web-based **Sudoku Game**, designed to provide an interactive 
 
 Or
 
-Link : https://pranavcodesforreal.github.io/Sudoku-Game/
+Link : https://pranavgarg502.github.io/Sudoku-Game/
 
